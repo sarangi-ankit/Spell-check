@@ -30,7 +30,9 @@
 #input2{
     margin-left: 90px;
 }
-.searchBox{
-    margin-top: 30px;
-    
+#textBox{
+    height:220px;
+    border:solid;
+    background-color: white;
+
 }

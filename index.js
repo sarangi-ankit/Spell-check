@@ -1,4 +1,4 @@
-
+// https://api.textgears.com/spelling?key=YYzAtVCWDnDhRBpg&text=my%20name%20is%20amna%20sigh%20solanki&language=en-GB
 function random(){
     var input2=document.getElementById("input2").value;
     document.getElementById("input1").value=input2;
@@ -19,4 +19,18 @@ function random(){
          searchBox.value=lines.join('\n');
      };
      reader.readAsText(file);
+     fetchApi()
  });
+
+ function fetchApi(){
+     fetch("https://api.textgears.com/spelling?key=YYzAtVCWDnDhRBpg&text=my%20name%20is%20amna%20sigh%20solanki&language=en-GB")
+     .then((response)=>{
+         return response.json();
+     }).then((data)=>{
+         console.log(data)
+     })
+     
+     }
+     fetchApi()
+ 
+
