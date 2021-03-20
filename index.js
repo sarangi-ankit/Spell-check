@@ -4,7 +4,7 @@ function random(){
     document.getElementById("input1").value=input2;
 
  }
- 
+ let bl = ''
  var searchBox=document.getElementById("textBox");
 
  input2.addEventListener("change",()=>{
@@ -17,13 +17,16 @@ function random(){
          var file=e.target.result;
          var lines=file.split(/\r\n|\n/);
          searchBox.value=lines.join('\n');
+         bl = lines.join('\n');
      };
      reader.readAsText(file);
      fetchApi()
  });
 
- function fetchApi(){
-     fetch("https://api.textgears.com/spelling?key=YYzAtVCWDnDhRBpg&text=my%20name%20is%20amna%20sigh%20solanki&language=en-GB")
+function fetchApi(){
+  
+
+     fetch("https://api.textgears.com/spelling?key=YYzAtVCWDnDhRBpg&text="+searchBox)
      .then((response)=>{
          return response.json();
      }).then((data)=>{
