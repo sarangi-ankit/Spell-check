@@ -10,19 +10,15 @@
 </head>
 <body>
    <h1>Grammarly</h1>
-   <div class="container" id="container">
-       <div class="sub-container" id="sub-container">
-           <div class="search" id="search">
-                <input type="text" id="input1">
-                <input type="file" id="input2" onclick="random()">    
-           </div>
+   
+       <input id="searchFile" class="searchFile" type="file" onchange="textBox()">
+       <div  id="text" class="text"></div>
+        <div id="custom">
+            <ul></ul>
            
-              <div id="textBox1">
-                  <textarea id="textBox" cols="30" rows="10"></textarea>
-              </div>
-           
-
-       </div>
-   </div> 
+        </div>    
+       
+   
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 </html>

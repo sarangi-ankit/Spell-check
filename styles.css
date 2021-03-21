@@ -1,38 +1,14 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-}
-
-.container{
-    text-align: center;
-    position: absolute;
-    top:30px;
-    left:37%;
-    margin:100px auto;
-    width:50vh;
-    height:65vh;
-    background-color:burlywood ;
-    padding:15px;
-    border-radius: 13px;
+.text{
+    height:40px;
+    border:solid;
     
 }
-.sub-container{
-    margin-top: 60px;
-    border: solid;
+.mistake{
+    background-color: red;
 }
-#input1{
-    height: 30px;
-    width:60%;
-    margin-bottom: 20px;
-    margin-top: 10px;
-}
-#input2{
-    margin-left: 90px;
-}
-#textBox{
-    height:220px;
-    border:solid;
-    background-color: white;
-
+#custom{
+    background-color: cyan;
+    width:130px;
+    height:60px;
+    display:none;
 }
