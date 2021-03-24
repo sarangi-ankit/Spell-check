@@ -20,7 +20,7 @@ function textBox(){
                     for (let invalid of invalids){
                         input=input.replace(
                             invalid.bad,
-                            `<span id="mistake" class="mistake">${invalid.bad}</span>`
+                            `<span  class="mistake">${invalid.bad}</span>`
                         );
                     }
                     text.innerHTML=input
@@ -30,14 +30,13 @@ function textBox(){
                 for (let i=0;i<mistakeSpan.length;i++){
                     $(mistakeSpan[i]).contextmenu((event)=>{
                         // console.log(mistakeSpan[i])
-                        dummy=mistakeSpan[i]
+                        
                         event.preventDefault();
                         $("#custom > ul").empty()
                         for (let j=0;j<invalids[i].better.length;j++){
-                            $("#custom > ul").append(`<li class="reference">${invalids[i].better[j]}</li>`)
+                            $("#custom > ul").append(`<li wordtoreplace="${invalids[i].bad}" class="reference">${invalids[i].better[j]}</li>`)
                             
                         }
-                        $("#custom").css("display","block")
                         $(".reference").mouseover(
                             (event)=>{
                                 event.target.style.backgroundColor="green";
@@ -51,23 +50,28 @@ function textBox(){
                         $(".reference").click(
                             (event)=>{
                                 let wrongWord=document.getElementsByClassName("mistake");
-                                console.log(wrongWord)
-                                let correctWords=document.querySelectorAll(".reference");
+                                
                                 // console.log(correctWords)
                                 
 
-                            //    for (let z=0;z<wrongWord.length;z++){
+                               for (let z=0;z<wrongWord.length;z++){
+                                //    wrongWord[z].innerHTML=correctWords.innerHTML
                                     // console.log("ankit")
-                                    // if (wrongWord[z].innerHTML==$(event.target)){
-                                    //     wrongWord[z].innerHTML=event.target.innerHTML;
-                                    //     wrongWord[z].classList.remove("mistake");
-                                    //     $("#custom").css("display","none");
-                                    //     break;
+                                    if (wrongWord[z].innerHTML==$(event.target).attr("wordtoreplace")){
+                                        wrongWord[z].innerHTML=event.target.innerHTML;
+                                        wrongWord[z].classList.remove("mistake");
+                                        $("#custom").css("display","none");
+                                        break;
                                     
-                                    // }
-                            //    }
+                                    }
+                               }
+
                             }
                         )
+                        $("#custom").css("display","block")
+
+                       
+                      
 
                     })
                 }
